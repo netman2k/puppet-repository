@@ -21,5 +21,5 @@ ini_setting { 'Configure environmentpath':
 ini_setting { 'Configure basemodulepath':
   section => 'main',
   setting => 'basemodulepath',
-  value   => '$confdir/modules:/opt/puppet/share/puppet/modules',
+  value   => '$confdir/modules:/usr/share/puppet/modules',
 }
