@@ -22,3 +22,10 @@ mod 'mysql',
 mod 'wordpress',
   :git => 'https://github.com/hunner/puppet-wordpress'
 
+mod 'stdlib',
+  :git => 'https://github.com/puppetlabs/puppetlabs-stdlib.git',
+  :tag => '4.6.0'
+
+mod 'concat',
+  :git => 'https://github.com/puppetlabs/puppetlabs-concat.git',
+  :tag => '1.2.4'
