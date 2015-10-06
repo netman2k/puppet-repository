@@ -19,6 +19,9 @@ mod 'vsftp',
 mod 'mysql',
   :git => 'git://github.com/puppetlabs/puppetlabs-mysql.git'
 
+mod 'nanliu-staging',
+  :git => 'https://github.com/nanliu/puppet-staging'
+
 mod 'wordpress',
   :git => 'https://github.com/hunner/puppet-wordpress'
 
