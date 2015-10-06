@@ -18,23 +18,23 @@ ini_setting { 'Configure environmentpath':
   value   => '$confdir/environments',
 }
 
-# >= Puppet 3.8
-ini_setting { 'Configure basemodulepath':
-  section => 'main',
-  setting => 'basemodulepath',
-  value   => '$confdir/modules:/usr/share/puppet/modules',
+if versioncmp($::puppetversion, '3.4') {
+  # >= Puppet 3.8
+  ini_setting { 'Configure basemodulepath':
+    section => 'main',
+    setting => 'basemodulepath',
+    value   => '$confdir/modules:/usr/share/puppet/modules',
+  }
+} else {
+# <= Puppet 3.4
+  ini_setting { 'Configure modulepath':
+    section => 'main',
+    setting => 'modulepath',
+    value   => '$confdir/modules:/usr/share/puppet/modules',
+  }
+  ini_setting { 'Configure manifest':
+    section => 'master',
+    setting => 'manifest',
+    value   => '$confdir/environments/$environment/manifests/site.pp',
+  }
 }
-
-# <= Puppet 3.4
-#ini_setting { 'Configure modulepath':
-#  section => 'main',
-#  setting => 'modulepath',
-#  value   => '$confdir/modules:/usr/share/puppet/modules',
-#}
-
-# <= Puppet 3.4
-#ini_setting { 'Configure manifest':
-#  section => 'master',
-#  setting => 'manifest',
-#  value   => '$confdir/environments/$environment/manifests/site.pp',
-#}
