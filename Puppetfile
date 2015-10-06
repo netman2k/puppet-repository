@@ -13,6 +13,9 @@ mod 'puppetlabs/firewall'
 mod 'profiles',
   :git => 'https://github.com/netman2k/puppet-profiles.git'
 
+mod 'roles',
+  :git => 'https://github.com/netman2k/puppet-roles.git'
+
 mod 'vsftp',
   :git => 'https://github.com/thias/puppet-vsftpd'
 
