@@ -3,6 +3,7 @@
   - yaml
 :hierarchy:
   - "%{clientcert}"
+  - "%{ec2_tag_role}"
   - "%{application_tier}"
   - common
 

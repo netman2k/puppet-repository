@@ -4,6 +4,10 @@ forge "http://forge.puppetlabs.com"
 mod "puppetlabs/apache"
 mod "puppetlabs/ntp"
 mod 'puppetlabs/firewall'
+# Modules to create facts based on EC2 tags 
+mod 'bryana/ec2tagfacts', :latest
+mod 'stahnma/epel', :latest
+mod 'puppetlabs/inifile', :latest
 
 # Modules from Github using various references
 #mod 'notifyme',
