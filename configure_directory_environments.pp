@@ -18,7 +18,7 @@ ini_setting { 'Configure environmentpath':
   value   => '$confdir/environments',
 }
 
-if versioncmp($::puppetversion, '3.4') {
+if versioncmp($::puppetversion, '3.5') >= 0 {
   # >= Puppet 3.8
   ini_setting { 'Configure basemodulepath':
     section => 'main',
@@ -30,7 +30,7 @@ if versioncmp($::puppetversion, '3.4') {
   ini_setting { 'Configure modulepath':
     section => 'main',
     setting => 'modulepath',
-    value   => '$confdir/modules:/usr/share/puppet/modules',
+    value   => '$confdir/environments/$environment/modules:/etc/puppet/modules:/usr/share/puppet/modules',
   }
   ini_setting { 'Configure manifest':
     section => 'master',
