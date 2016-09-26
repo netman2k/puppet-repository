@@ -10,7 +10,7 @@ class { 'r10k':
   sources           => {
     'puppet' => {
       'remote'  => 'https://github.com/netman2k/puppet-repository.git',
-      'basedir' => "${::settings::confdir}/environments",
+      'basedir' =>  $::settings::environmentpath,
       'prefix'  => false,
     }
   },

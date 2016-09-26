@@ -1,6 +1,10 @@
 ######                           ######
 ##  Configure Directory Environments ##
+##  It's for the puppetserver >= 2.5 ##
 ######                           ######
+
+# Reference:
+# https://docs.puppet.com/puppet/4.6/reference/environments_configuring.html 
 
 ##  This manifest requires the puppetlabs/inifile module and will attempt to
 ##  configure puppet.conf according to the blog post on using R10k and
@@ -15,26 +19,12 @@ Ini_setting {
 ini_setting { 'Configure environmentpath':
   section => 'main',
   setting => 'environmentpath',
-  value   => '$confdir/environments',
+  value   => '$codedir/environments',
 }
 
-if versioncmp($::puppetversion, '3.5') >= 0 {
-  # >= Puppet 3.8
-  ini_setting { 'Configure basemodulepath':
-    section => 'main',
-    setting => 'basemodulepath',
-    value   => '$confdir/modules:/usr/share/puppet/modules',
-  }
-} else {
-# <= Puppet 3.4
-  ini_setting { 'Configure modulepath':
-    section => 'main',
-    setting => 'modulepath',
-    value   => '$confdir/environments/$environment/modules:/etc/puppet/modules:/usr/share/puppet/modules',
-  }
-  ini_setting { 'Configure manifest':
-    section => 'master',
-    setting => 'manifest',
-    value   => '$confdir/environments/$environment/manifests/site.pp',
-  }
+ini_setting { 'Configure basemodulepath':
+  section => 'main',
+  setting => 'basemodulepath',
+  value   => '$codedir/modules:/usr/share/puppet/modules',
 }
+

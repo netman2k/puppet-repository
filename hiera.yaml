@@ -1,15 +1,13 @@
 ---
 :backends:
   - yaml
-:hierarchy:
-  - "%{clientcert}"
-  - "%{ec2_tag_role}"
-  - "%{application_tier}"
-  - common
-
+  - json
 :yaml:
-# datadir is empty here, so hiera uses its defaults:
-# - /var/lib/hiera on *nix
-# - %CommonAppData%\PuppetLabs\hiera\var on Windows
-# When specifying a datadir, make sure the directory exists.
-  :datadir: "/etc/puppet/environments/%{environment}/hieradata"
+  :datadir: "/etc/puppetlabs/code/environments/%{environment}/hieradata"
+:json:
+  :datadir: "/etc/puppetlabs/code/environments/%{environment}/hieradata" 
+:hierarchy:
+  - "nodes/%{::trusted.certname}"
+  - "virtual/%{::virtual}"
+  - "%{application_tier}"
+  - "common"
