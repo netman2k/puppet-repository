@@ -22,3 +22,5 @@ mod 'stdlib',
 mod 'concat',
   :git => 'https://github.com/puppetlabs/puppetlabs-concat.git',
 #  :tag => '1.2.4'
+
+mod 'saz/rsyslog', '4.0.2'
