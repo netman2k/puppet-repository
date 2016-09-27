@@ -1,4 +1,0 @@
----
-message: 'You are in the prod application tier'
-
-java_version: '1.6.0_45'

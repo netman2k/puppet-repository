@@ -1,2 +1,11 @@
 ---
-message: "This node is using common data"
+profiles::rsyslog:
+  remote_servers:
+    - host: "logm-pci-us.%{::domain}"
+      port: "514"
+      pattern: "*.*"
+      protocol: "tcp"
+    - host: "logm-pci-kr.%{::domain}"
+      port: "514"
+      pattern: "*.*"
+      protocol: "tcp"
