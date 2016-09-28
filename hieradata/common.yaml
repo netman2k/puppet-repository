@@ -1,11 +1,10 @@
 ---
-profiles::rsyslog:
-  remote_servers:
-    - host: "logm-pci-us.%{::domain}"
-      port: "514"
-      pattern: "*.*"
-      protocol: "tcp"
-    - host: "logm-pci-kr.%{::domain}"
-      port: "514"
-      pattern: "*.*"
-      protocol: "tcp"
+profiles::rsyslog::remote_servers:
+  - host: "logm-pci-us.%{::domain}"
+    port: "514"
+    pattern: "*.*"
+    protocol: "tcp"
+  - host: "logm-pci-kr.%{::domain}"
+    port: "514"
+    pattern: "*.*"
+    protocol: "tcp"
