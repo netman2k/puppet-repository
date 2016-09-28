@@ -1,5 +1,5 @@
 ---
-profiles::ntp::servers:
+profiles::ntp::servers: &id001
   - 64.90.182.55
   - 208.66.175.36
   - time-nw.nist.gov
@@ -15,3 +15,4 @@ profiles::ntp::restrict:
   - '-6 default kod nomodify notrap nopeer noquery'
   - '127.0.0.1'
   - '-6 ::1'
+  - *id001
