@@ -8,7 +8,7 @@ profiles::rsyslog::remote_servers:
     port: "514"
     pattern: "*.*"
     protocol: "tcp"
-profiles::ntp::servers:
+profiles::ntp::servers: &id001
   - 'ntp1.us.cdngp.net'
   - 'ntp2.us.cdngp.net'
   - 'ntp1.kr.cdngp.net'
@@ -18,3 +18,4 @@ profiles::ntp::restrict:
   - '-6 default kod nomodify notrap nopeer noquery'
   - '127.0.0.1'
   - '-6 ::1'
+  - *id001
