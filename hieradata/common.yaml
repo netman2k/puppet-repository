@@ -1,11 +1,21 @@
 ---
-profiles::rsyslog:
-  remote_servers:
-    - host: "logm-pci-us.%{::domain}"
-      port: "514"
-      pattern: "*.*"
-      protocol: "tcp"
-    - host: "logm-pci-kr.%{::domain}"
-      port: "514"
-      pattern: "*.*"
-      protocol: "tcp"
+profiles::rsyslog::remote_servers:
+  - host: "logm-pci-us.%{::domain}"
+    port: "514"
+    pattern: "*.*"
+    protocol: "tcp"
+  - host: "logm-pci-kr.%{::domain}"
+    port: "514"
+    pattern: "*.*"
+    protocol: "tcp"
+profiles::ntp::servers: &id001
+  - 'ntp1.us.cdngp.net'
+  - 'ntp2.us.cdngp.net'
+  - 'ntp1.kr.cdngp.net'
+  - 'ntp2.kr.cdngp.net'
+profiles::ntp::restrict:
+  - 'default kod nomodify notrap nopeer noquery'
+  - '-6 default kod nomodify notrap nopeer noquery'
+  - '127.0.0.1'
+  - '-6 ::1'
+  - *id001

@@ -1,0 +1,17 @@
+---
+profiles::ntp::servers:
+  - 64.90.182.55
+  - 208.66.175.36
+  - time-nw.nist.gov
+  - clepsydra.dec.com
+  - ntp.xbsd.kr
+  - time.nist.gov
+  - clock.nc.fukuoka-u.ac.jp
+  - ntp1.nl.uu.net
+  - t2.timegps.net
+  - ntp.nasa.gov
+profiles::ntp::restrict:
+  - 'default kod nomodify notrap nopeer noquery'
+  - '-6 default kod nomodify notrap nopeer noquery'
+  - '127.0.0.1'
+  - '-6 ::1'
