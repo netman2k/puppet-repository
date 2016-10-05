@@ -13,6 +13,10 @@ mod 'saz/rsyslog', '4.0.2'
 mod 'aboe/chrony',
   :git    => 'https://github.com/aboe76/puppet-chrony.git'
 
+mod 'razorsedge/puppet-snmp', '3.6.0'
+#  :git    => 'https://github.com/razorsedge/puppet-snmp.git',
+#	:tag		=> '3.6.0'
+
 mod 'profiles',
   :git 	  => 'https://github.com/netman2k/puppet-profiles.git',
   :branch => 'dev'
