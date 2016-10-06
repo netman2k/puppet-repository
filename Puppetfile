@@ -13,9 +13,16 @@ mod 'saz/rsyslog', '4.0.2'
 mod 'aboe/chrony',
   :git    => 'https://github.com/aboe76/puppet-chrony.git'
 
-mod 'razorsedge/snmp', '3.6.0'
-#  :git    => 'https://github.com/razorsedge/puppet-snmp.git',
-#	:tag		=> '3.6.0'
+mod 'snmp',
+# Currently, razersedge/snmp module makes many nosy warnings
+# such as Warning: Unknown variable: '::snmp_agentaddress'.
+# at /etc/puppetlabs/code/environments/dev/modules/snmp/manifests/params.pp:19:19
+# It's not fully support Puppet 4.0 syntax. that's why I used another git repo.
+# The origin is :
+  #:git   => 'https://github.com/razorsedge/puppet-snmp.git'
+  :git    => 'https://github.com/mterzo/puppet-snmp.git',
+  :commit => '7d4c97c5b6bf8756db8515355d4aac9ffd524569'
+ 	#:tag		=> '3.6.0'
 
 mod 'profiles',
   :git 	  => 'https://github.com/netman2k/puppet-profiles.git',
