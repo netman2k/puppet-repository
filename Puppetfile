@@ -21,7 +21,7 @@ mod 'snmp',
 # The origin is :
   #:git   => 'https://github.com/razorsedge/puppet-snmp.git'
   :git    => 'https://github.com/mterzo/puppet-snmp.git',
-  :commit => '7d4c97c5b6bf8756db8515355d4aac9ffd524569'
+  :branch => 'enable_strict'
  	#:tag		=> '3.6.0'
 
 mod 'profiles',
