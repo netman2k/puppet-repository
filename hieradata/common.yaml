@@ -22,7 +22,9 @@ profiles::ntp::restrict:
   - '-6 ::1'
   - *id001
 #Profiles::SNMP
-#profiles::snmp::ro_community:
+profiles::snmp::ro_community:
+  - 'CDN3tw0rks'
+  #- 'pecdncom'
 profiles::snmp::sys_contact: 'infra-sys@cdnetworks.com'
 profiles::snmp::sys_location: 'Unknown'
 profiles::snmp::sys_services: 72
