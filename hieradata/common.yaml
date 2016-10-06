@@ -1,4 +1,5 @@
 ---
+#Profiles::RSYSLOG
 profiles::rsyslog::remote_servers:
   - host: "logm-pci-us.%{::domain}"
     port: "514"
@@ -8,6 +9,7 @@ profiles::rsyslog::remote_servers:
     port: "514"
     pattern: "*.*"
     protocol: "tcp"
+#Profiles::NTP
 profiles::ntp::servers: &id001
   - 'ntp1.us.cdngp.net'
   - 'ntp2.us.cdngp.net'
@@ -19,3 +21,15 @@ profiles::ntp::restrict:
   - '127.0.0.1'
   - '-6 ::1'
   - *id001
+#Profiles::SNMP
+profiles::snmp::ro_community: undef
+profiles::snmp::sys_contact: infra-sys@cdnetworks.com
+profiles::snmp::sys_location: Unknown
+profiles::snmp::sys_services: 72
+profiles::snmp::sys_name: %{::fqdn}
+profiles::snmp::snmpv3_user:
+  name: pmv3nS12
+  authtype: SHA
+  authpass: nuyHooW32
+  privtype: AES
+  privpass: ngpsmn1k
