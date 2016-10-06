@@ -3,16 +3,14 @@ forge "http://forge.puppetlabs.com"
 # Modules from the Puppet Forge
 mod "puppetlabs/apache"
 mod "puppetlabs/ntp"
-mod 'puppetlabs/firewall'
 mod 'puppetlabs/concat', :latest
 mod 'puppetlabs/stdlib', :latest
 mod 'puppetlabs/inifile', :latest
 mod 'nanliu/staging', :latest
 mod 'saz/rsyslog', '4.0.2'
-
+mod 'crayfishx/firewalld', :latest
 mod 'aboe/chrony',
   :git    => 'https://github.com/aboe76/puppet-chrony.git'
-
 mod 'snmp',
 # Currently, razersedge/snmp module makes many nosy warnings
 # such as Warning: Unknown variable: '::snmp_agentaddress'.
@@ -23,10 +21,8 @@ mod 'snmp',
   :git    => 'https://github.com/mterzo/puppet-snmp.git',
   :branch => 'enable_strict'
  	#:tag		=> '3.6.0'
-
 mod 'profiles',
   :git 	  => 'https://github.com/netman2k/puppet-profiles.git',
   :branch => 'dev'
-
 mod 'roles',
   :git => 'https://github.com/netman2k/puppet-roles.git'
