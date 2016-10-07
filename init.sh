@@ -29,11 +29,38 @@ EOF
 
 }
 
+function help(){
+
+
+}
+
+function generate_gpg(){
+
+  cat << EOF >> /tmp/gpg_answers
+%echo Generating a Puppet Hiera GPG Key
+Key-Type: RSA
+Key-Length: 4096
+Subkey-Type: ELG-E
+Subkey-Length: 4096
+Name-Real: Hiera Data
+Name-Comment: Hiera Data Encryption
+Name-Email: infra-sys@cdnetworks.com
+Expire-Date: 0
+%no-ask-passphrase
+# Do a commit here, so that we can later print "done" :-)
+# %commit
+# %echo done
+EOF
+
+}
+
 function main(){
-  local env=$1; shift 1;;
+
   init_puppet
-  set_application_tier_facts $env
+  generate_gpg
+  set_application_tier_facts $1
   r10k deploy environment -pv
 }
+
 
 main "$@"
