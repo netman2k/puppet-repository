@@ -8,15 +8,16 @@
 
 class { 'hiera':
   hierarchy            => [
-    "nodes/%{::trusted.certname}",
-    "locations/%{::location}",
-    "hostgroups/%{::hostgroup}",
-    "virtual/%{::virtual}",
-    "environments/%{::application_tier}",
-    'environments/secure',
+    'nodes/%{::trusted.certname}',
+    'locations/%{::location}',
+    'hostgroups/%{::hostgroup}',
+    '%{::environment}/%{::application_tier}',
+    '%{::environment}/secure',
+    'virtual/%{::virtual}',
     'common'
   ],
   #backends             => ['yaml', 'redis'],
+  backends             => [ 'yaml' ],
   merge_behavior       => 'deeper',
   logger               => 'console',
   eyaml                => true,
