@@ -16,7 +16,7 @@ class { 'hiera':
     'environments/secure',
     'common'
   ],
-  backends             => ['yaml', 'redis'],
+  #backends             => ['yaml', 'redis'],
   merge_behavior       => 'deeper',
   logger               => 'console',
   eyaml                => true,
