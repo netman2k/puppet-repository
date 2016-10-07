@@ -7,6 +7,7 @@
 ##  Beware! (and good luck!)
 
 class { 'hiera':
+  master_service       => 'puppetserver',
   hierarchy            => [
     'nodes/%{::trusted.certname}',
     'locations/%{::location}',
