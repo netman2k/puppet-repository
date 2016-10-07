@@ -10,7 +10,6 @@ mod 'nanliu/staging', :latest
 mod 'saz/rsyslog', '4.0.2'
 mod 'duosecurity/duo_unix', :latest
 mod 'crayfishx/firewalld', :latest
-mod 'puppet-hiera'
 mod 'aboe/chrony',
   :git    => 'https://github.com/aboe76/puppet-chrony.git'
 mod 'snmp',
