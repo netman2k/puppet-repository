@@ -22,16 +22,15 @@ profiles::ntp::restrict:
   - '-6 ::1'
   - *id001
 #Profiles::SNMP
-profiles::snmp::ro_community:
-  - 'CDN3tw0rks'
-  #- 'pecdncom'
-profiles::snmp::sys_contact: 'infra-sys@cdnetworks.com'
-profiles::snmp::sys_location: 'Unknown'
-profiles::snmp::sys_services: 72
-profiles::snmp::sys_name: "%{::fqdn}"
-profiles::snmp::snmpv3_user:
-  name: 'pmv3nS12'
-  authtype: 'SHA'
-  authpass: 'nuyHooW32'
-  privtype: 'AES'
-  privpass: 'ngpsmn1k'
+profiles::snmp:
+  #ro_community: use eyaml
+  sys_contact: 'infra-sys@cdnetworks.com'
+  sys_location: 'Unknown'
+  sys_services: 72
+  sys_name: "%{::fqdn}"
+  snmpv3_user:
+    #name: use secure eyaml
+    authtype: 'SHA'
+    #authpass:  use secure eyaml
+    privtype: 'AES'
+    #privpass: use secure eyaml

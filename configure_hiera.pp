@@ -7,6 +7,7 @@
 ##  Beware! (and good luck!)
 
 class { 'hiera':
+  master_service       => 'puppetserver',
   hierarchy            => [
     "nodes/%{::trusted.certname}",
     "locations/%{::location}",
@@ -16,7 +17,6 @@ class { 'hiera':
     'secure',
     'common'
   ],
-  #backends             => ['yaml', 'redis'],
   backends             => ['yaml',],
   merge_behavior       => 'deeper',
   logger               => 'console',
