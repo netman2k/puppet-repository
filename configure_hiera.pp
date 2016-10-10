@@ -10,10 +10,15 @@ class { 'hiera':
   master_service       => 'puppetserver',
   hierarchy            => [
     "nodes/%{::trusted.certname}",
+    "nodes/%{::trusted.certname}_secure",
     "locations/%{::location}",
+    "locations/%{::location}_secure",
     "hostgroups/%{::hostgroup}",
+    "hostgroups/%{::hostgroup}_secure",
     "virtual/%{::virtual}",
+    "virtual/%{::virtual}_secure",
     "%{::application_tier}",
+    "%{::application_tier}_secure",
     'secure',
     'common'
   ],
