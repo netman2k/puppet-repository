@@ -8,6 +8,7 @@ mod 'puppetlabs/concat', :latest
 mod 'puppetlabs/stdlib', :latest
 mod 'puppetlabs/inifile', :latest
 mod 'nanliu/staging', :latest
+mod 'puppet/hiera'
 mod 'saz/rsyslog', '4.0.2'
 
 mod 'aboe/chrony',
@@ -19,4 +20,3 @@ mod 'profiles',
 
 mod 'roles',
   :git => 'https://github.com/netman2k/puppet-roles.git'
-
