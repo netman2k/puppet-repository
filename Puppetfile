@@ -3,10 +3,11 @@ forge "http://forge.puppetlabs.com"
 # Modules from the Puppet Forge
 mod "puppetlabs/apache"
 mod "puppetlabs/ntp"
-mod 'puppetlabs/concat', :latest
-mod 'puppetlabs/stdlib', :latest
-mod 'puppetlabs/inifile', :latest
-mod 'nanliu/staging', :latest
+mod 'puppetlabs/concat'
+mod 'puppetlabs/stdlib'
+mod 'puppetlabs/inifile'
+mod 'puppet/hiera'
+mod 'nanliu/staging'
 mod 'saz/rsyslog', '4.0.2'
 mod 'duosecurity/duo_unix', :latest
 mod 'crayfishx/firewalld', :latest
