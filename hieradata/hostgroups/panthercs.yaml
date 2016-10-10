@@ -1,0 +1,34 @@
+---
+profiles::snmp::snmp_options:
+  - extend .1.3.6.99.4.1.2021.50 mailq /usr/bin/mailq
+  - extend .1.3.6.99.4.1.2021.51 wcn /var/cdn/ops/dircount.sh /var/cdn/nodedata/url/02-ready
+  - extend .1.3.6.99.4.1.2021.52 wcn /var/cdn/ops/dircount.sh /var/cdn/nodedata/traffic/02-ready
+  - #
+  - trapsink cdc.panthercdn.com
+  - informsink cdc.panthercdn.com
+  - trapcommunity pecdncom
+  - authtrapenable 2
+  - #
+  - proc ntpd 2 1
+  - #
+  - disk / 10%
+  - disk /cache0 3%
+  - disk /cache1 3%
+  - disk /cache2 3%
+  - disk /cache3 3%
+  - disk /cache4 3%
+  - disk /cache5 3%
+  - disk /cache6 3%
+  - disk /cache7 3%
+  - #
+  - file /var/log/mcelog
+  - #
+  - agentSecName root
+  - rouser root
+  - #
+  - monitor -r 10 -o prNames -o prErrMessage "process table" prErrorFlag != 0
+  - monitor -r 10 -o memErrorName -o memSwapErrorMsg "memory" memSwapError != 0
+  - monitor -r 10 -o extNames -o extOutput "extTable" extResult != 0
+  - monitor -r 10 -o dskPath -o dskErrorMsg "dskTable" dskErrorFlag != 0
+  - monitor -r 10 -o laNames -o laErrMessage "laTable" laErrorFlag != 0
+  - monitor -r 10 -o fileName -o fileErrorMsg "fileTable" fileErrorFlag != 0
