@@ -1,0 +1,5 @@
+---
+ssh::server_options:
+  PrintLastLog: 'no'
+  Match Group ssh_key:
+    AllowAgentForwarding: no
