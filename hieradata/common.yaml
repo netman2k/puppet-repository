@@ -33,9 +33,15 @@ ssh::server_options:
     Protocol: '2'
     Port:
       - '2113'
-    PasswordAuthentication: 'no'
     SyslogFacility: 'AUTHPRIV'
+    PermitRootLogin: 'no'
+    PasswordAuthentication: 'no'
+    ChallengeResponseAuthentication: 'no'
     UsePAM: 'yes'
+    UseDNS: 'no'
+    AllowTcpForwarding: 'no'
     X11Forwarding: 'no'
     PrintMotd: 'yes'
     Subsystem: 'sftp /usr/lib/openssh/sftp-server'
+    Match User deploy:
+      PasswordAuthentication: 'yes'
