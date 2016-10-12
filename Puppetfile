@@ -10,7 +10,6 @@ mod 'puppetlabs/inifile', :latest
 mod 'puppet/staging', '2.0.1'
 mod 'puppet/hiera'
 mod 'saz/rsyslog', '4.0.2'
-mod 'saz/ssh', '2.9.1'
 
 mod 'aboe/chrony',
   :git    => 'https://github.com/aboe76/puppet-chrony.git'
