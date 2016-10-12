@@ -26,3 +26,6 @@ profiles::snmp::snmp_options:
   - monitor -r 10 -o dskPath -o dskErrorMsg "dskTable" dskErrorFlag != 0
   - monitor -r 10 -o laNames -o laErrMessage "laTable" laErrorFlag != 0
   - monitor -r 10 -o fileName -o fileErrorMsg "fileTable" fileErrorFlag != 0
+ssh::server_options:
+    Port:
+      - '722'
