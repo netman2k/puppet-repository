@@ -7,7 +7,7 @@ mod 'puppetlabs/firewall'
 mod 'puppetlabs/concat', :latest
 mod 'puppetlabs/stdlib', :latest
 mod 'puppetlabs/inifile', :latest
-mod 'nanliu/staging', :latest
+mod 'puppet/staging', '2.0.1'
 mod 'puppet/hiera'
 mod 'saz/rsyslog', '4.0.2'
 
