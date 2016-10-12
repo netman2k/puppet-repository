@@ -28,3 +28,17 @@ profiles::snmp::sys_location: 'Unknown'
 profiles::snmp::sys_services: 72
 profiles::snmp::sys_name: "%{::fqdn}"
 #profiles::snmp::snmpv3_user: use secure.eyaml
+ssh::storeconfigs_enables: true
+ssh::server_options:
+    Protocol: '2'
+    Port:
+      - '2113'
+    ListenAddress:
+        - '127.0.0.0'
+        - '%{::hostname}'
+    PasswordAuthentication: 'no'
+    SyslogFacility: 'AUTHPRIV'
+    UsePAM: 'yes'
+    X11Forwarding: 'no'
+    PrintMotd: 'yes'
+    Subsystem: 'sftp /usr/lib/openssh/sftp-server'
