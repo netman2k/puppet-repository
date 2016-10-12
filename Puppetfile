@@ -9,6 +9,7 @@ mod 'puppetlabs/inifile'
 mod 'puppet/hiera'
 mod 'nanliu/staging'
 mod 'saz/rsyslog', '4.0.2'
+mod 'saz/ssh', '2.9.1'
 mod 'duosecurity/duo_unix', :latest
 mod 'crayfishx/firewalld', :latest
 mod 'aboe/chrony',
