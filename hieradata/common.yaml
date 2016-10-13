@@ -9,7 +9,19 @@ profiles::base::motd: |
   All persons are hereby notified that the use of this
   system constitutes consent to monitoring and auditing.
   * * * * * * * * * * * * * * * * * * * * * * * * * * *
+profiles::base::login_defs::options:
+  ENCRYPT_METHOD: 'SHA512'
+  PASS_MAX_DAYS: 730
+  PASS_MIN_DAYS: 0
+  PASS_MIN_LEN: 8
+  PASS_WARN_AGE: 60
 #Profiles::RSYSLOG
+#profiles::rsyslog::rate_limit_interval:
+profiles::rsyslog::mainmsg_queue_timeout_enqueue: 0
+profiles::rsyslog::action_queue_timeout_enqueue: 0
+profiles::rsyslog::log_local_config_1:
+  - local6.notice  /var/log/bash
+#profiles::rsyslog::log_local_config_2:
 profiles::rsyslog::remote_servers:
   - host: "logm-pci-us.%{::domain}"
     port: "514"
@@ -21,37 +33,37 @@ profiles::rsyslog::remote_servers:
     protocol: "tcp"
 #Profiles::NTP
 profiles::ntp::servers: &id001
-  - 'ntp1.us.cdngp.net'
-  - 'ntp2.us.cdngp.net'
-  - 'ntp1.kr.cdngp.net'
-  - 'ntp2.kr.cdngp.net'
+  - ntp1.us.cdngp.net
+  - ntp2.us.cdngp.net
+  - ntp1.kr.cdngp.net
+  - ntp2.kr.cdngp.net
 profiles::ntp::restrict:
-  - 'default kod nomodify notrap nopeer noquery'
-  - '-6 default kod nomodify notrap nopeer noquery'
-  - '127.0.0.1'
-  - '-6 ::1'
+  - default kod nomodify notrap nopeer noquery
+  - -6 default kod nomodify notrap nopeer noquery
+  - 127.0.0.1
+  - -6 ::1
   - *id001
 #Profiles::SNMP
 #profiles::snmp::ro_community: use secure eyaml
-profiles::snmp::sys_contact: 'infra-sys@cdnetworks.com'
-profiles::snmp::sys_location: 'Unknown'
+profiles::snmp::sys_contact: infra-sys@cdnetworks.com
+profiles::snmp::sys_location: Unknown
 profiles::snmp::sys_services: 72
 profiles::snmp::sys_name: "%{::fqdn}"
 #profiles::snmp::snmpv3_user: use secure.eyaml
 ssh::storeconfigs_enables: true
 ssh::server_options:
-    Protocol: '2'
+    Protocol: 2
     Port:
-      - '2113'
-    SyslogFacility: 'AUTHPRIV'
-    PermitRootLogin: 'no'
-    PasswordAuthentication: 'no'
-    ChallengeResponseAuthentication: 'no'
-    UsePAM: 'yes'
-    UseDNS: 'no'
-    AllowTcpForwarding: 'no'
-    X11Forwarding: 'no'
-    PrintMotd: 'yes'
-    Subsystem: 'sftp /usr/lib/openssh/sftp-server'
+      - 2113
+    SyslogFacility: AUTHPRIV
+    PermitRootLogin: no
+    PasswordAuthentication: no
+    ChallengeResponseAuthentication: no
+    UsePAM: yes
+    UseDNS: no
+    AllowTcpForwarding: no
+    X11Forwarding: no
+    PrintMotd: yes
+    Subsystem: sftp /usr/lib/openssh/sftp-server
     Match User deploy:
-      PasswordAuthentication: 'yes'
+      PasswordAuthentication: yes
