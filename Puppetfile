@@ -9,9 +9,9 @@ mod 'puppetlabs/inifile'
 mod 'puppet/hiera'
 mod 'puppet/staging'
 mod 'puppet/selinux'
-mod 'joshbeard/login_defs'
 mod 'saz/rsyslog', '4.0.2'
 mod 'saz/ssh', '2.9.1'
+mod 'joshbeard/login_defs'
 mod 'duosecurity/duo_unix', :latest
 mod 'crayfishx/firewalld', :latest
 mod 'aboe/chrony',
