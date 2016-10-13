@@ -1,4 +1,14 @@
 ---
+#Profiles::base
+profiles::base::motd: |
+  * * * * * * * * * W A R N I N G * * * * * * * * * * *
+  This system is restricted to authorized users for
+  authorized use only. Unauthorized access is strictly
+  prohibited and may be punishable under the Computer
+  Fraud and Abuse Act of 1984 or other applicable laws.
+  All persons are hereby notified that the use of this
+  system constitutes consent to monitoring and auditing.
+  * * * * * * * * * * * * * * * * * * * * * * * * * * *
 #Profiles::RSYSLOG
 profiles::rsyslog::remote_servers:
   - host: "logm-pci-us.%{::domain}"
