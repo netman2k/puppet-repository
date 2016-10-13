@@ -12,7 +12,7 @@ profiles::snmp::snmpv3_user:
     W8zNtUGq1l2uoRSW5K4fhfVcNI4sC0MRGaheQekVlEbqvZIG/uQGuJqerZpf
     92+GoTA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBDkIO9YfH6PYU935M0V
     XdGrgBDl3+GVJ2lDmqnKPbYpucL9]
-  authtype: SHA
+  authtype: MD5
   authpass: >
     ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
     DQYJKoZIhvcNAQEBBQAEggEANYDX00l9csm8v+bFcG1w17H91WKFhqHw1263
@@ -23,7 +23,7 @@ profiles::snmp::snmpv3_user:
     9pcyaTq5WYIFuv4BNRQwOt2lpqIsy2mi3fDcJwdnEtOoh0SVVPMfOxk4B/GO
     OfB8STA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBDD35XqVZIcFBtalLX0
     npOBgBCl10e1HVkuBro1vHwad4Jz]
-  privtype: AES
+  privtype: DES
   privpass: >
     ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEw
     DQYJKoZIhvcNAQEBBQAEggEAt/2NXZbXiikANvtRAPBDebf1Z8ssIijMkTOz
