@@ -28,4 +28,4 @@ profiles::snmp::snmp_options:
   - monitor -r 10 -o fileName -o fileErrorMsg "fileTable" fileErrorFlag != 0
 ssh::server_options:
     Port:
-      - '722'
+      - 722
