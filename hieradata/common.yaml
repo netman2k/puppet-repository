@@ -50,7 +50,7 @@ profiles::snmp::sys_location: Unknown
 profiles::snmp::sys_services: 72
 profiles::snmp::sys_name: "%{::fqdn}"
 #profiles::snmp::snmpv3_user: use secure.eyaml
-ssh::storeconfigs_enables: true
+ssh::storeconfigs_enables: false
 ssh::server_options:
     Protocol: 2
     Port:
