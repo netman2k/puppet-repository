@@ -1,3 +1,5 @@
 ---
 profiles::base::securetty:
-  - ttyS0
+  - tty1
+  - xvc0
+  - pts0
