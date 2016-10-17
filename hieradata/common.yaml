@@ -18,12 +18,12 @@ profiles::base::login_defs::options:
 profiles::base::services:
   - name: logxfer-debug
     protocol: tcp
-    port: "2103"
+    port: 2103
     #aliases: undef
     comment: CDNET Logxfer Debug
   - name: config-debug
     protocol: tcp
-    port: "2105"
+    port: 2105
     #aliases: undef
     comment: CDNET Config Debug
 #Profiles::RSYSLOG
@@ -35,11 +35,11 @@ profiles::rsyslog::log_local_config_1:
 #profiles::rsyslog::log_local_config_2:
 profiles::rsyslog::remote_servers:
   - host: "logm-pci-us.%{::domain}"
-    port: "514"
+    port: 514
     pattern: "*.*"
     protocol: "tcp"
   - host: "logm-pci-kr.%{::domain}"
-    port: "514"
+    port: 514
     pattern: "*.*"
     protocol: "tcp"
 #Profiles::NTP
@@ -65,7 +65,7 @@ ssh::storeconfigs_enables: false
 ssh::server_options:
     Protocol: 2
     Port:
-      - "2113"
+      - 2113
     SyslogFacility: AUTHPRIV
     PermitRootLogin: no
     PasswordAuthentication: no
