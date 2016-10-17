@@ -1,0 +1,5 @@
+---
+profiles::base::securetty
+  - tty1
+  - xvc0
+  - pts0

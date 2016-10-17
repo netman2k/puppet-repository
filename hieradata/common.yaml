@@ -26,6 +26,8 @@ profiles::base::services:
     port: 2105
     #aliases: undef
     comment: CDNET Config Debug
+profiles::base::securetty:
+  - console
 #Profiles::RSYSLOG
 #profiles::rsyslog::rate_limit_interval:
 profiles::rsyslog::mainmsg_queue_timeout_enqueue: 0
