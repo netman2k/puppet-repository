@@ -1,6 +1,6 @@
 ---
 limits::entries:
-  40-nofile:
-    user: *
-    limit_type: nofile
-    both: 100000
+  "40-nofile":
+    user: "*"
+    limit_type: "nofile"
+    both: "100000"

@@ -29,18 +29,18 @@ profiles::base::services:
 profiles::base::securetty:
   - console
 limits::entries:
-  20-nproc:
-    user: *
-    limit_type: nproc
-    both: 20000
-  30-core:
-    user: *
-    limit_type: core
-    both: unlimited
-  40-nofile:
-    user: *
-    limit_type: nofile
-    both: 16000
+  "20-nproc":
+    user: "*"
+    limit_type: "nproc"
+    both: "20000"
+  "30-core":
+    user: "*"
+    limit_type: "core"
+    both: "unlimited"
+  "40-nofile":
+    user: "*"
+    limit_type: "nofile"
+    both: "16000"
 #Profiles::RSYSLOG
 #profiles::rsyslog::rate_limit_interval:
 profiles::rsyslog::mainmsg_queue_timeout_enqueue: 0
