@@ -37,9 +37,11 @@ profiles::snmp::snmpv3_user:
 profiles::base::environment::env_hash:
   "10-environments.sh": |
     # Managed by Puppet
-    BASHPRE=%{::hostgroup}:${KSSUSER}
-    PATHPRE=/usr/local/cdnet/scripts
+    export HOSTGROUP="%{::hostgroup}"
+    [ -z $KSSUSER ] && KSSUSER="UNKNOWN"
+    BASHPRE=${HOSTGROUP^^}:${KSSUSER}
     export PS1="[\${BASHPRE}:\u@\H \w]\\$ "
+    export PATHPRE=/usr/local/cdnet/scripts
     export PATH=$PATHPRE:$PATH:$PATHPOST
     [ -z $TMOUT ] && readonly TMOUT=900
   "20-kernel.sh": |
