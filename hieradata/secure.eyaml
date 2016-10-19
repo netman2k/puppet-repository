@@ -41,7 +41,7 @@ profiles::base::environment::env_hash:
     PATHPRE=/usr/local/cdnet/scripts
     export PS1="[\${BASHPRE}:\u@\H \w]\\$ "
     export PATH=$PATHPRE:$PATH:$PATHPOST
-    readonly TMOUT=900
+    [ -z $TMOUT ] && readonly TMOUT=900
   "20-kernel.sh": |
     # Managed by Puppet
     export DAEMON_COREFILE_LIMIT=unlimited
