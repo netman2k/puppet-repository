@@ -11,7 +11,7 @@ mod 'puppet/staging'
 mod 'puppet/selinux'
 mod 'saz/rsyslog', '4.0.2'
 mod 'saz/ssh', '2.9.1'
-mod 'saz/limits', '2.3.0'
+mod 'ghoneycutt/pam', '2.29.1'
 mod 'joshbeard/login_defs', '0.2.0'
 mod 'ccin2p3/etc_services', '1.0.2'
 mod 'duosecurity/duo_unix', :latest
