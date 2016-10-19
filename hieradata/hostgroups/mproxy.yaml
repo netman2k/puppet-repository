@@ -1,6 +1,6 @@
 ---
-limits::entries:
-  "40-nofile":
-    user: "*"
-    limit_type: "nofile"
-    both: "100000"
+pam::limits_fragments:
+  nofile:
+    list:
+      - '* soft nofile 100000'
+      - '* hard nofile 100000'  
