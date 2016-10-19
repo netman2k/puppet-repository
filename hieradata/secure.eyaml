@@ -37,11 +37,11 @@ profiles::snmp::snmpv3_user:
 profiles::base::environment::env_hash:
   "10-environments.sh": |
     # Managed by Puppet
-    BASHPRE=%{::hostgroup}${KSSUSER}
+    BASHPRE=%{::hostgroup}:${KSSUSER}
     PATHPRE=/usr/local/cdnet/scripts
     export PS1="[\${BASHPRE}:\u@\H \w]\\$ "
     export PATH=$PATHPRE:$PATH:$PATHPOST
-    readonly TMOUT: 900
+    readonly TMOUT=900
   "20-kernel.sh": |
     # Managed by Puppet
     export DAEMON_COREFILE_LIMIT=unlimited
