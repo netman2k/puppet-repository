@@ -1,11 +1,16 @@
 #!/bin/bash
 
-function init_puppt(){
+function init_puppet(){
 
   rpm -qi puppetlabs-release-pc1 > /dev/null || rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
   rpm -qi puppetserver > /dev/null || yum install puppetserver -y
 
   source /etc/profile.d/puppet-agent.sh
+
+	yum install -y git
+	git clone https://github.com/netman2k/puppet-repository.git
+	cd puppet-repository
+	git checkout dev
 
   puppet module install zack/r10k
   puppet module install puppet-hiera
@@ -15,6 +20,9 @@ function init_puppt(){
   puppet apply configure_r10k.pp
   puppet apply configure_hiera.pp
   puppet apply configure_directory_environments.pp
+
+	yum install -y unzip
+	unzip -o keys/eyaml_keys.zip -d /etc/puppetlabs/puppet/keys/
 
 }
 
