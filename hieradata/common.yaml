@@ -1,6 +1,6 @@
 ---
 #Profiles::base
-profiles::base::motd: |
+profiles::base::motd: |+
 
   * * * * * * * * * W A R N I N G * * * * * * * * * * *
   This system is restricted to authorized users for
