@@ -3,4 +3,3 @@
 #pam::sshd_pam_access: 'absent'
 pam::allowed_users:
   'vagrant':
-    - tty1
