@@ -3,3 +3,13 @@ profiles::base::securetty:
   - tty1
   - xvc0
   - pts0
+# TODO: The below pam setting makes the system
+# to be less secure
+# You might use pam::allowed_users: instead of these
+# ex)
+# pam::allowed_users:
+#   - centos
+#   - other_user
+# https://forge.puppet.com/ghoneycutt/pam/readme#hiera-example-for-allowed_users
+pam::login_pam_access: 'absent'
+pam::sshd_pam_access: 'absent'

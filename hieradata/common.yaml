@@ -28,6 +28,7 @@ profiles::base::services:
     comment: CDNET Config Debug
 profiles::base::securetty:
   - console
+# https://forge.puppet.com/ghoneycutt/pam/readme#hiera-example-for-allowed_users
 pam::limits_fragments:
   nproc:
     list:
