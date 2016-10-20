@@ -4,7 +4,7 @@ forge "http://forge.puppetlabs.com"
 mod "puppetlabs/apache"
 mod "puppetlabs/ntp"
 mod 'puppetlabs/concat'
-mod 'puppetlabs/stdlib'
+mod 'puppetlabs/stdlib', '4.12.0'
 mod 'puppetlabs/inifile'
 mod 'puppet/hiera'
 mod 'puppet/staging'
