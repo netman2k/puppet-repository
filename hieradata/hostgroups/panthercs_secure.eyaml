@@ -29,5 +29,5 @@ profiles::snmp::snmp_options:
 ssh::server_options:
     Port:
       - 722
-profiles::base::pam::allowed_users:
+pam::allowed_users:
   - ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEwDQYJKoZIhvcNAQEBBQAEggEAR3qCeU5xZF1QG5wgoCCg+gA5jNN900uNt5kGlHDeoIrObVXdGCUds9g0YP8QI093++N8MhTfZTIDVDO7PVWcnftXgymbmZVQQ9J7inVscTuuggvqW/9Wvtabl4eZ5s+ZmUEmNQHVWKDhV4RyKdEeZ8j9XE7yxOfKIFiorY4pqaS2gMPiSt9d2qIDI45hToGwdFLfbOzuJ15UmZ+MmCvE9TQS9l8ZKR3vg5ojIP6ROcr5wpIcleB8pAsnLdNqJtC0Ob9D72bOme/dN1WsBU4BrbG/F0cijFOArhPnFt+TxPUDEnyxYkMex+3L+Z9+oQQ9EfF0qz3mJB15VjD/AdQRZDA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBAH1AVknPtBmz2Y+agaAZ8/gBDZjhUCfu6K/9+l3wOs8/Lc]

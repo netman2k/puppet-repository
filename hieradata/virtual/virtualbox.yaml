@@ -1,5 +1,4 @@
 ---
 #pam::login_pam_access: 'absent'
 #pam::sshd_pam_access: 'absent'
-pam::allowed_users:
-  'vagrant':
+pam::allowed_users: vagrant
