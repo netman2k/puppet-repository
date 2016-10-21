@@ -88,6 +88,7 @@ ssh::server_options:
     PermitRootLogin: no
     PasswordAuthentication: no
     ChallengeResponseAuthentication: no
+    MaxAuthTries: 4
     UsePAM: yes
     UseDNS: no
     AllowTcpForwarding: no
