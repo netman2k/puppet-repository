@@ -80,7 +80,7 @@ profiles::snmp::sys_services: 72
 profiles::snmp::sys_name: "%{::fqdn}"
 #profiles::snmp::snmpv3_user: use secure.eyaml
 profiles::base::aliases::aliases:
-  name: 'root'
+  root:
     recipient: '/dev/null'
 ssh::storeconfigs_enables: false
 ssh::server_options:
