@@ -11,15 +11,17 @@ mod 'puppet/staging'
 mod 'puppet/selinux'
 mod 'saz/rsyslog', '4.0.2'
 mod 'saz/ssh', '2.9.1'
-mod 'ghoneycutt/common'
-mod 'ghoneycutt/nsswitch'
-mod 'ghoneycutt/pam', '2.29.1'
 mod 'joshbeard/login_defs', '0.2.0'
 mod 'ccin2p3/etc_services', '1.0.2'
 mod 'duosecurity/duo_unix', :latest
 mod 'crayfishx/firewalld', :latest
 mod 'aboe/chrony',
   :git    => 'https://github.com/aboe76/puppet-chrony.git'
+mod 'ghoneycutt/common'
+mod 'ghoneycutt/nsswitch'
+mod 'ghoneycutt/pam',
+  :git    => 'https://github.com/mterzo/puppet-snmp.git',
+  :commit => '603c369'
 mod 'snmp',
 # Currently, razersedge/snmp module makes many nosy warnings
 # such as Warning: Unknown variable: '::snmp_agentaddress'.
@@ -29,9 +31,9 @@ mod 'snmp',
   #:git   => 'https://github.com/razorsedge/puppet-snmp.git'
   :git    => 'https://github.com/mterzo/puppet-snmp.git',
   :branch => 'enable_strict'
- 	#:tag		=> '3.6.0'
+   #:tag    => '3.6.0'
 mod 'profiles',
-  :git 	  => 'https://github.com/netman2k/puppet-profiles.git',
+  :git     => 'https://github.com/netman2k/puppet-profiles.git',
   :branch => 'dev'
 mod 'roles',
   :git => 'https://github.com/netman2k/puppet-roles.git'
