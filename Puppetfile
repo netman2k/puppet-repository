@@ -20,7 +20,7 @@ mod 'aboe/chrony',
 mod 'ghoneycutt/common'
 mod 'ghoneycutt/nsswitch'
 mod 'ghoneycutt/pam',
-  :git    => 'https://github.com/mterzo/puppet-snmp.git',
+  :git    => 'https://github.com/ghoneycutt/puppet-module-pam.git',
   :commit => '4ac5ce444df1aefae50d6f35c40792f8892177c8'
 mod 'snmp',
 # Currently, razersedge/snmp module makes many nosy warnings
