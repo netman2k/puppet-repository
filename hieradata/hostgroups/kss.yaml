@@ -25,3 +25,4 @@ pam::pam_account_lines:
   - 'account     required      pam_unix.so'
   - 'account     sufficient    pam_succeed_if.so uid < 500 quiet'
   - 'account     required      pam_permit.so'
+  - 'account     required      pam_tally2.so'
