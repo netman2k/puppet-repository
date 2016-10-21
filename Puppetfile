@@ -21,7 +21,7 @@ mod 'ghoneycutt/common'
 mod 'ghoneycutt/nsswitch'
 mod 'ghoneycutt/pam',
   :git    => 'https://github.com/mterzo/puppet-snmp.git',
-  :commit => '603c369'
+  :commit => '4ac5ce444df1aefae50d6f35c40792f8892177c8'
 mod 'snmp',
 # Currently, razersedge/snmp module makes many nosy warnings
 # such as Warning: Unknown variable: '::snmp_agentaddress'.
