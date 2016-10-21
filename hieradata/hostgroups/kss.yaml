@@ -1,8 +1,11 @@
 ---
+# Setting for /etc/ssh/ssdh_config
 ssh::server_options:
   PrintLastLog: 'no'
   Match Group ssh_key:
     AllowAgentForwarding: no
+
+# Setting for /etc/login.defs
 profiles::base::login_defs::options:
   # If you change these you must update the KSS Doc.
   # - Title: KSS User Documentation
@@ -10,3 +13,15 @@ profiles::base::login_defs::options:
   PASS_MIN_DAYS   : 0
   PASS_MIN_LEN    : 8
   PASS_WARN_AGE   : 7
+
+# Setting for /etc/pam.d
+pam::pam_auth_lines:
+  - 'auth        required      pam_env.so'
+  - "auth        required      pam_tally2.so onerr=fail file=/var/log/tallylog deny=11 unlock_time=300"
+  - 'auth        sufficient    pam_unix.so nullok try_first_pass'
+  - 'auth        requisite     pam_succeed_if.so uid >= 1000 quiet_success'
+  - 'auth        required      pam_deny.so'
+pam::pam_account_lines:
+  - 'account     required      pam_unix.so'
+  - 'account     sufficient    pam_succeed_if.so uid < 500 quiet'
+  - 'account     required      pam_permit.so'
