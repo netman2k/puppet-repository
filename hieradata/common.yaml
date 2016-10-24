@@ -17,17 +17,6 @@ profiles::base::login_defs::options:
   PASS_MIN_DAYS: 0
   PASS_MIN_LEN: 8
   PASS_WARN_AGE: 60
-profiles::base::services:
-  - name: logxfer-debug
-    protocol: tcp
-    port: 2103
-    #aliases: undef
-    comment: CDNET Logxfer Debug
-  - name: config-debug
-    protocol: tcp
-    port: 2105
-    #aliases: undef
-    comment: CDNET Config Debug
 
 # Setting for /etc/securetty
 profiles::base::securetty:
