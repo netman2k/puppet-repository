@@ -82,7 +82,6 @@ profiles::ntp::restrict:
   - *id001
 #Profiles::SNMP
 #profiles::snmp::ro_community: use secure eyaml
-profiles::snmp::sys_contact: infra-sys@cdnetworks.com
 profiles::snmp::sys_location: Unknown
 profiles::snmp::sys_services: 72
 profiles::snmp::sys_name: "%{::fqdn}"
