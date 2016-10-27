@@ -7,10 +7,10 @@ function init_puppet(){
 
   source /etc/profile.d/puppet-agent.sh
 
-	yum install -y git
-	git clone https://github.com/netman2k/puppet-repository.git
-	cd puppet-repository
-	git checkout dev
+  yum install -y git
+  git clone https://github.com/netman2k/puppet-repository.git
+  cd puppet-repository
+  git checkout dev
 
   puppet module install zack/r10k
   puppet module install puppet-hiera
@@ -21,8 +21,8 @@ function init_puppet(){
   puppet apply configure_hiera.pp
   puppet apply configure_directory_environments.pp
 
-	yum install -y unzip
-	unzip -o keys/eyaml_keys.zip -d /etc/puppetlabs/puppet/keys/
+  yum install -y unzip
+  unzip -o keys/eyaml_keys.zip -d /etc/puppetlabs/puppet/keys/
 
 }
 
@@ -34,11 +34,6 @@ function set_application_tier_facts(){
 echo "application_tier=${env}"
 EOF
   chmod +x /etc/facter/facts.d/environment.sh
-
-}
-
-function help(){
-
 
 }
 
