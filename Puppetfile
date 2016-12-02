@@ -33,6 +33,7 @@ mod 'snmp',
   :branch => 'enable_strict'
    #:tag    => '3.6.0'
 mod 'herculesteam/augeasproviders_sysctl', '2.1.0'
+mod 'saz/memcached', '2.8.1'
 mod 'profiles',
   :git     => 'https://github.com/netman2k/puppet-profiles.git',
   :branch => 'dev'
