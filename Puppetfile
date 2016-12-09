@@ -6,6 +6,7 @@ mod "puppetlabs/ntp"
 mod 'puppetlabs/concat'
 mod 'puppetlabs/stdlib', '4.12.0'
 mod 'puppetlabs/inifile'
+mod 'puppetlabs/strings'
 mod 'puppet/hiera'
 mod 'puppet/staging'
 mod 'puppet/selinux'
