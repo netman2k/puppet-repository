@@ -60,20 +60,14 @@ profiles::rsyslog::log_local_config_1:
   - local6.notice  /var/log/bash
 #profiles::rsyslog::log_local_config_2:
 profiles::rsyslog::remote_servers:
-  - host: "logm-pci-us.%{::domain}"
-    port: 514
-    pattern: "*.*"
-    protocol: "tcp"
-  - host: "logm-pci-kr.%{::domain}"
+  - host: "logm.%{::domain}"
     port: 514
     pattern: "*.*"
     protocol: "tcp"
 #Profiles::NTP
 profiles::ntp::servers: &id001
-  - ntp1.us.cdngp.net
-  - ntp2.us.cdngp.net
-  - ntp1.kr.cdngp.net
-  - ntp2.kr.cdngp.net
+  - 1.pool.ntp.org
+  - 2.pool.ntp.org
 profiles::ntp::restrict:
   - default kod nomodify notrap nopeer noquery
   - -6 default kod nomodify notrap nopeer noquery
@@ -93,7 +87,7 @@ ssh::storeconfigs_enables: false
 ssh::server_options:
     Protocol: 2
     Port:
-      - 2113
+      - 22
     SyslogFacility: AUTHPRIV
     PermitRootLogin: no
     PasswordAuthentication: no
@@ -107,3 +101,10 @@ ssh::server_options:
     Subsystem: sftp /usr/lib/openssh/sftp-server
     Match User deploy:
       PasswordAuthentication: yes
+
+Profiles::base::sysctl:
+  - 'net.ipv4.tcp_timestamps':
+      ensure: "present"
+      value: "0"
+      target: "/etc/sysctl.d/ipv4_tcp_timestamp.conf"
+      apply: true

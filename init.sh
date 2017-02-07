@@ -21,9 +21,6 @@ function init_puppet(){
   puppet apply configure_hiera.pp
   puppet apply configure_directory_environments.pp
 
-  yum install -y unzip
-  unzip -o keys/eyaml_keys.zip -d /etc/puppetlabs/puppet/keys/
-
 }
 
 function set_application_tier_facts(){
@@ -60,8 +57,8 @@ EOF
 function main(){
 
   init_puppet
-  generate_gpg
-  set_application_tier_facts $1
+#  generate_gpg
+#  set_application_tier_facts $1
   r10k deploy environment -pv
 }
 
