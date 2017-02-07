@@ -15,8 +15,7 @@ mod 'aboe/chrony',
   :git    => 'https://github.com/aboe76/puppet-chrony.git'
 
 mod 'profiles',
-  :git 	  => 'https://github.com/netman2k/puppet-profiles.git',
-  :branch => 'dev'
+  :git 	  => 'https://github.com/netman2k/puppet-profiles.git'
 
 mod 'roles',
   :git => 'https://github.com/netman2k/puppet-roles.git'
