@@ -8,6 +8,7 @@ function config(){
   git clone https://github.com/netman2k/puppet-repository.git
   cd puppet-repository
 
+  puppet module install puppetlabs/inifile
   puppet apply ${DIR}/../configure_directory_environments.pp
   cp -fv ${DIR}/../environment.conf /etc/puppetlabs/puppet/
 
